@@ -3,15 +3,15 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema({
     title: {
         type: String,
-        required
+        required: true
     },
     reps: {
         type: Number,
-        required
+        required: true
     },
     load: {
         type: Number,
-        required
+        required: true
     }
 }, {timestamps: true})
 
