@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
 
 :root {
-  --primary: #1aac83;
+  --primary: #1aa2ac;
   --error: #e7195a;
 }
 
@@ -38,4 +38,31 @@ header a {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 100px;
+}
+
+.workout-details {
+  background: rgb(255, 255, 255);
+  border-radius: 8px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 10px 6px 6px 2px rgba(0,0,0,0.05);
+  position: relative;
+  transition: transform .4s;
+}
+
+.workout-details h4 {
+  margin: 0;
+  font-size: 1.3em;
+  color: var(--primary);
+}
+
+.workout-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.workout-details:hover{
+  background: rgb(206, 204, 204);
+  transform: scale(105%);
 }
