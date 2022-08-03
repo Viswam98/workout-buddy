@@ -8,28 +8,13 @@ mongoose.connect(process.env.MONGO_URI)
     .catch(err => console.log("Error"))
 const app = express()
 
+app.use((req,res,next) => {
+    console.log(req.path,req.method)
+    next()
+})
 app.use(express.json())
 
-
 app.use('/api/workouts', workoutRoutes)
-// app.get('/workouts', (req,res) => {
-//     res.json({msg: 'get all workouts'})
-// })
 
-// app.post('/workouts', (req,res) => {
-//     res.json({msg: 'create a new workout'})
-// })
-
-// app.get('/workouts/:id', (req,res) => {
-//     res.json({msg: 'get a single workout'})
-// })
-
-// app.delete('/workouts/:id', (req,res) => {
-//     res.json({msg: 'delete a workout'})
-// })
-
-// app.patch('/workouts/:id', (req,res) => {
-//     res.json({msg: 'updating a workout'})
-// })
 
 
