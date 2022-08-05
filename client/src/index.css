@@ -91,5 +91,24 @@ form button {
   font-family: "Poppins";
   border-radius: 8px;
   cursor: pointer;
+  transition: transform .1s;
 }
 
+form button:hover{
+  background: rgb(13, 122, 130);
+  transform: scale(103%);
+}
+
+form button:active {
+  background-color: var(--primary);
+}
+
+
+div.error {
+  padding: 10px;
+  background: rgb(245, 237, 237);
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 8px;
+  margin: 20px auto;
+}
