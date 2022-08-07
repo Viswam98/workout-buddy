@@ -20,7 +20,6 @@ const WorkoutForm = () => {
             })
         const json = await response.json()
         if(!response.ok){
-            console.log(json)
             setError(json.error)
         }
         if(response.ok) {
@@ -31,7 +30,6 @@ const WorkoutForm = () => {
             dispatch({type: 'CREATE_WORKOUT', payload: json})
         }
     }
-    console.log(error)
     return ( 
         
         <form className="create" onSubmit={handleSubmit}>

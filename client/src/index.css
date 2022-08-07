@@ -67,16 +67,24 @@ header a {
   top: 20px;
   right: 20px;
   cursor: pointer;
-  background: #f1f1f1;
+  /* background: #eeecec; */
   padding: 6px;
-  border-radius: 50%;
-  color: #333;
+  border-radius: 20%;
+  color: rgb(61, 60, 60);
+}
+
+.workout-details .disappear {
+  display: none;
 }
 
 .workout-details:hover{
   background: rgb(206, 204, 204);
   transform: scale(105%);
   box-shadow: 10px 6px 6px 2px rgba(0,0,0,0.5);
+}
+
+.workout-details span:hover {
+  background: rgb(173, 172, 172);
 }
 
 
