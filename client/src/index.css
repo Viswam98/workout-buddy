@@ -62,16 +62,43 @@ header a {
   color: #555;
 }
 
-.workout-details span {
+/* .workout-details .delete {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15%;
+  right: 5%;
   cursor: pointer;
-  /* background: #eeecec; */
   padding: 6px;
   border-radius: 20%;
   color: rgb(61, 60, 60);
 }
+
+.workout-details .edit {
+  position: absolute;
+  top: 15%;
+  right: 15%;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 20%;
+  color: rgb(61, 60, 60);
+} */
+
+
+.workout-details .container {
+  position: absolute;
+  min-width: 60px;
+  top: 12%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.workout-details span {
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 20%;
+  color: rgb(61, 60, 60);
+}
+
 
 .workout-details .disappear {
   display: none;
