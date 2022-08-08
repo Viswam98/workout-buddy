@@ -1,6 +1,7 @@
 import { formatDistanceToNow } from 'date-fns'
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import { FaTrash, FaEdit } from 'react-icons/fa'
+import { BiArrowBack } from 'react-icons/bi'
 import { useState } from 'react'
 
 const WorkoutDetails = ({workout}) => {
@@ -15,6 +16,7 @@ const WorkoutDetails = ({workout}) => {
     const [edit, setEdit] = useState(false)
 
     const {dispatch} = useWorkoutsContext()
+    
     const handleDelete = async() => {
         const response = await fetch('/api/workouts/' + workout._id, {
             method: 'DELETE'
@@ -45,22 +47,21 @@ const WorkoutDetails = ({workout}) => {
         }
     }
 
-    const handleEdit = () => {
-        setEdit(true)
-    }
-
-    const handleMouseEnter = () => {
-        setHover(true)
-    }
-    const handleMouseLeave = () => {
-        setHover(false)
-    }
-
     return ( 
         
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className="workout-details">
+        <div 
+            onMouseEnter={() => setHover(true)} 
+            onMouseLeave={() => setHover(false)} 
+            className="workout-details"
+        >
             {edit ? (
                     <>
+                        <span 
+                            className='back'
+                            onClick={() => setEdit(false)}
+                        >
+                            <BiArrowBack/>
+                        </span>
                         <form onSubmit={handleSubmit}>
                             <input 
                                 type="text" 
@@ -99,7 +100,7 @@ const WorkoutDetails = ({workout}) => {
                         <div className="container">
                             <span 
                                 className={`edit ${hover ? '' : 'disappear'}`} 
-                                onClick={handleEdit}
+                                onClick={() => setEdit(true)}
                             >
                                 <FaEdit/>
                             </span> 
