@@ -129,6 +129,13 @@ input {
   box-sizing: border-box;
 }
 
+
+.create {
+  position: fixed;
+  top: 20%;
+  right: 2%;
+}
+
 form button {
   background: var(--primary);
   border: 0;
