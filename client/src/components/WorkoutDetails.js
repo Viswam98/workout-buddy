@@ -63,28 +63,36 @@ const WorkoutDetails = ({workout}) => {
                             <BiArrowBack/>
                         </span>
                         <form onSubmit={handleSubmit}>
-                            <input 
-                                type="text" 
-                                onChange={(e)=>setTitle(e.target.value)}
-                                value={title}
-                                required
-                            />
+                            
+                            <label className='inline'>
+                                <p><strong>Title:</strong></p>
+                                <input 
+                                    type="text" 
+                                    onChange={(e)=>setTitle(e.target.value)}
+                                    value={title}
+                                    required
+                                />
+                            </label>
 
-                            <p><strong>Load (kg):</strong></p>
-                            <input 
-                                type="number" 
-                                onChange={(e)=>setLoad(e.target.value)}
-                                value={load}
-                                required
-                            />
+                            <label className='inline'>
+                                <p><strong>Load (kg):</strong></p>
+                                <input 
+                                    type="number" 
+                                    onChange={(e)=>setLoad(e.target.value)}
+                                    value={load}
+                                    required
+                                />
+                            </label>
 
-                            <p><strong>Reps:</strong></p>
-                            <input 
-                                type="number"
-                                onChange={(e)=>setReps(e.target.value)}
-                                value={reps}
-                                required
-                            />
+                            <label className='inline'>
+                                <p><strong>Reps:</strong></p>
+                                <input 
+                                    type="number"
+                                    onChange={(e)=>setReps(e.target.value)}
+                                    value={reps}
+                                    required
+                                />
+                            </label>
 
                             <button>Update</button>
                         </form>
