@@ -65,7 +65,7 @@ const WorkoutDetails = ({workout}) => {
                         <form onSubmit={handleSubmit}>
                             
                             <label className='inline'>
-                                <p><strong>Title:</strong></p>
+                                <div><p><strong>Title:</strong></p></div>
                                 <input 
                                     type="text" 
                                     onChange={(e)=>setTitle(e.target.value)}
@@ -75,7 +75,7 @@ const WorkoutDetails = ({workout}) => {
                             </label>
 
                             <label className='inline'>
-                                <p><strong>Load (kg):</strong></p>
+                                <div><p><strong>Load (kg):</strong></p></div>
                                 <input 
                                     type="number" 
                                     onChange={(e)=>setLoad(e.target.value)}
@@ -85,7 +85,7 @@ const WorkoutDetails = ({workout}) => {
                             </label>
 
                             <label className='inline'>
-                                <p><strong>Reps:</strong></p>
+                                <div><p><strong>Reps:</strong></p></div>
                                 <input 
                                     type="number"
                                     onChange={(e)=>setReps(e.target.value)}

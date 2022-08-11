@@ -164,9 +164,19 @@ form .inline {
   grid-gap: 5%;
 }
 
-form .inline p {
+form .inline div {
   align-self: center;
   justify-self: end;
+  width: 100%
+}
+
+form .inline p {
+  text-align: start;
+  padding-left: 65%;
+}
+
+form .inline input {
+  width: 70%
 }
 
 
@@ -181,4 +191,20 @@ div.error {
 
 input.error {
   border: 1px solid var(--error);
+}
+
+@media (max-width: 700px) {
+
+  form .inline p {
+    padding-left: 40%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  form .inline p {
+    padding-left: 10%;
+  }
+
 }
