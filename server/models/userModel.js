@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
+const bcrypt = require('bcrypt')
 
 const Schema = mongoose.Schema
 
@@ -30,7 +31,9 @@ userSchema.statics.signup = async function(email, password) {
     if(exists) {
         throw Error('Email already in use')
     }
-    const user = await this.create({email,password})
+    const salt = await bcrypt.genSalt(10)
+    const hash = await bcrypt.hash(password,salt)
+    const user = await this.create({email,password: hash})
 
     return user
 }
