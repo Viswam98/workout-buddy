@@ -1,12 +1,17 @@
 import { useState } from "react";
+import { useSignup } from "../hooks/useSignup";
 
 const Signup = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const {isLoading, error, signup} = useSignup()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault()
+        
+        await signup(email, password)
     }
+
     return ( 
         <form className="signup" onSubmit={handleSubmit}>
             <label>Email:</label>
