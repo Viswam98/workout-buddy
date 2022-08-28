@@ -3,6 +3,7 @@ import { useWorkoutsContext } from '../hooks/useWorkoutsContext'
 import { FaTrash, FaEdit } from 'react-icons/fa'
 import { BiArrowBack } from 'react-icons/bi'
 import { useState } from 'react'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 const WorkoutDetails = ({workout}) => {
 
@@ -15,11 +16,18 @@ const WorkoutDetails = ({workout}) => {
     const [hover, setHover] = useState(false)
     const [edit, setEdit] = useState(false)
 
-    const {dispatch} = useWorkoutsContext()
-    
+    const { dispatch } = useWorkoutsContext()
+    const { user } = useAuthContext()
+
     const handleDelete = async() => {
+        if(!user){
+            return
+        }
         const response = await fetch('/api/workouts/' + workout._id, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${user.token}`
+            }
         })
         const json = await response.json()
         if(response.ok) {
@@ -34,7 +42,8 @@ const WorkoutDetails = ({workout}) => {
             method: 'PATCH',
             body: JSON.stringify(updatedWorkout),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${user.token}`
             }
         })
         const json = await response.json()
