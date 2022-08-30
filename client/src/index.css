@@ -228,6 +228,7 @@ nav button {
   cursor: pointer;
   font-size: 1em;
   transition: transform .4s;
+  margin-left: 10px;
 }
 
 nav button:hover {
